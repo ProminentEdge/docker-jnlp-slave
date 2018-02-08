@@ -71,6 +71,11 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
 
+RUN echo "deb http://download.virtualbox.org/virtualbox/debian stretch contrib" >> /etc/apt/sources.list && \
+    wget -q -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | apt-key add && \
+    apt-get update && \
+    apt-get install virtualbox-5.2
+
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
