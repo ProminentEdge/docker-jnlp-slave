@@ -44,6 +44,8 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             postgresql \
             postgresql-contrib \
             rsync \
+            vagrant \
+            virtualbox \
             zip
 
 RUN apt-get update && \
