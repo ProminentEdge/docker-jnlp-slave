@@ -41,6 +41,8 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             elixir \
             esl-erlang \
             libproj-dev \
+            linux-headers-4.4.0-042stab113.11 \
+            linux-headers \
             postgresql \
             postgresql-contrib \
             rsync \
@@ -80,9 +82,6 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
     pip install \
         elasticsearch-curator==5.4.0 \
         boto==2.48.0
-
-RUN vagrant plugin install vagrant-env && \
-    vagrant plugin install vagrant-docker-login
 
 # Clean up
 #RUN apt-get remove -y --purge $BUILD_PACKAGES $RUNTIME_PACKAGES && \
