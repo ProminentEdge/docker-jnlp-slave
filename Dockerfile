@@ -41,8 +41,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             elixir \
             esl-erlang \
             libproj-dev \
-            linux-headers-4.4.0-042stab113.11 \
-            linux-headers \
             postgresql \
             postgresql-contrib \
             rsync \
@@ -76,6 +74,11 @@ RUN echo "deb http://download.virtualbox.org/virtualbox/debian stretch contrib" 
     wget -q -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | apt-key add && \
     apt-get update && \
     apt-get install -y virtualbox-5.2
+
+RUN apt-get install -y \
+    dkms \
+    linux-headers-`uname -r` \
+    linux-headers
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
