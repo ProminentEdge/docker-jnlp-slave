@@ -77,8 +77,8 @@ RUN echo "deb http://download.virtualbox.org/virtualbox/debian stretch contrib" 
 
 RUN apt-get install -y \
     dkms \
-    linux-headers-`uname -r` \
-    linux-headers
+    linux-headers && \
+    /sbin/rcvboxdrv setup
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
