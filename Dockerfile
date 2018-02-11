@@ -75,8 +75,10 @@ RUN echo "deb http://download.virtualbox.org/virtualbox/debian stretch contrib" 
     apt-get update && \
     apt-get install -y virtualbox-5.2
 
+# Vbox-specific
 RUN apt-get install -y \
     dkms \
+    gcc \
     linux-headers-4.9.0-5-amd64 && \
     /sbin/vboxconfig
 
