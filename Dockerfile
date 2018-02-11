@@ -77,7 +77,8 @@ RUN echo "deb http://download.virtualbox.org/virtualbox/debian stretch contrib" 
 
 RUN apt-get install -y \
     dkms \
-    linux-headers-4.9.0-5-amd64
+    linux-headers-4.9.0-5-amd64 && \
+    /sbin/vboxconfig
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
