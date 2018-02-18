@@ -70,11 +70,6 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
 
-RUN echo "deb http://download.virtualbox.org/virtualbox/debian stretch contrib" >> /etc/apt/sources.list && \
-    wget -q -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | apt-key add && \
-    apt-get update && \
-    apt-get install -y virtualbox-5.2
-
 # Vbox-specific
 RUN apt-get install -y \
     dkms \
