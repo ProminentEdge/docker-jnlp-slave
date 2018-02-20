@@ -75,13 +75,6 @@ RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-darwi
     chmod +x ark && \
     mv ark /usr/local/bin/ark
 
-# Vbox-specific
-RUN apt-get install -y \
-    dkms \
-    gcc \
-    linux-headers-4.9.0-5-amd64 && \
-    /sbin/vboxconfig
-
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
