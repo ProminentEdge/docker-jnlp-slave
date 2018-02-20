@@ -64,8 +64,8 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y $RUNTIME_PACKAGES
 
-RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-darwin-amd64.tar.gz && \
-    tar -xvzf ark-v0.7.0-darwin-amd64.tar.gz && \
+RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-linux-arm64.tar.gz && \
+    tar -xvzf ark-v0.7.0-linux-arm64.tar.gz && \
     chmod +x ark && \
     mv ark /usr/local/bin/ark
 
