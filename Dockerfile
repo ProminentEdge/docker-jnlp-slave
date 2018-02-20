@@ -65,6 +65,11 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y $RUNTIME_PACKAGES
 
+RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-darwin-amd64.tar.gz && \
+    tar -xvzf ark-v0.7.0-darwin-amd64.tar.gz && \
+    chmod +x ark && \
+    mv ark /usr/local/bin/ark
+
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 && \
     mv confd-0.14.0-linux-amd64 /usr/local/bin/confd && \
     wget -O packer.zip https://releases.hashicorp.com/packer/1.1.2/packer_1.1.2_linux_amd64.zip?_ga=2.243599746.608711644.1512069049-1880364814.1510687238 && \
