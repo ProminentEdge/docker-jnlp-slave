@@ -70,6 +70,11 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
 
+RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-darwin-amd64.tar.gz && \
+    tar -xvzf ark-v0.7.0-darwin-amd64.tar.gz && \
+    chmod +x ark && \
+    mv ark /usr/local/bin/ark
+
 # Vbox-specific
 RUN apt-get install -y \
     dkms \
