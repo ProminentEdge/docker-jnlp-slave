@@ -81,6 +81,12 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         elasticsearch-curator==5.4.0 \
         boto==2.48.0
 
+# Install Vault
+RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.zip && \
+    unzip vault_0.9.6_linux_amd64.zip && \
+    mv vault /usr/local/bin && \
+    chmod 755 /usr/local/bin/vault
+
 # Clean up
 #RUN apt-get remove -y --purge $BUILD_PACKAGES $RUNTIME_PACKAGES && \
 #    rm -rf /var/lib/apt/lists/*
