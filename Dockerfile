@@ -83,6 +83,12 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
 
+# Install Vault
+RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.zip && \
+    unzip vault_0.9.6_linux_amd64.zip && \
+    mv vault /usr/local/bin && \
+    chmod 755 /usr/local/bin/vault
+
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
