@@ -45,7 +45,8 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             postgresql-contrib \
             rsync \
             vagrant \
-            zip
+            zip \
+            ruby-dev
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
@@ -86,6 +87,9 @@ RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.z
     unzip vault_0.9.6_linux_amd64.zip && \
     mv vault /usr/local/bin && \
     chmod 755 /usr/local/bin/vault
+    
+# Install Jekyll
+RUN gem install jekyll bundler
 
 # Clean up
 #RUN apt-get remove -y --purge $BUILD_PACKAGES $RUNTIME_PACKAGES && \
