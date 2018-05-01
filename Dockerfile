@@ -88,9 +88,9 @@ RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.z
     mv vault /usr/local/bin && \
     chmod 755 /usr/local/bin/vault
     
-# Install Jekyll
-RUN gem install jekyll bundler
-
+# Install Ruby bundler
+RUN gem install bundler
+    
 # Clean up
 #RUN apt-get remove -y --purge $BUILD_PACKAGES $RUNTIME_PACKAGES && \
 #    rm -rf /var/lib/apt/lists/*
