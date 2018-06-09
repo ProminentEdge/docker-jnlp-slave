@@ -49,7 +49,8 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             zip \
             ruby-dev
 
-RUN apt-get update && \
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" && \
