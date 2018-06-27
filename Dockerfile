@@ -46,6 +46,7 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             postgresql \
             postgresql-contrib \
             rsync \
+            software-properties-common \
             vagrant \
             zip \
             ruby-dev
@@ -59,6 +60,10 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     dpkg -i erlang-solutions_1.0_all.deb && \
     apt-get update && \
     apt-get install -y $RUNTIME_PACKAGES
+
+RUN apt-add-repository ppa:ansible/ansible && \
+    apt-get update && \
+    apt-get install -y ansible
 
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 && \
     mv confd-0.14.0-linux-amd64 /usr/local/bin/confd && \
