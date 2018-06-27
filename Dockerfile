@@ -61,7 +61,8 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get update && \
     apt-get install -y $RUNTIME_PACKAGES
 
-RUN apt-add-repository ppa:ansible/ansible && \
+RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
     apt-get update && \
     apt-get install -y ansible
 
