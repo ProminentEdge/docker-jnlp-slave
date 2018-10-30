@@ -37,7 +37,7 @@ ENV BUILD_PACKAGES apt-transport-https \
 ENV RUNTIME_PACKAGES apt-transport-https \
             awscli \
             build-essential \
-            docker-ce=17.03.1~ce-0~ubuntu-xenial \
+            docker-ce=17.06.2~ce-0~ubuntu \
             elixir \
             esl-erlang \
             g++ \
