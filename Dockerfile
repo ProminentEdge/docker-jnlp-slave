@@ -53,11 +53,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
 ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
 ENV PATH ${GRADLE_HOME}/bin:${PATH}
 
-RUN apt-get install -y \
-    libc6-dev-i386 \
-    lib32z1 \
-    default-jdk
-
 RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
     unzip -d /opt/gradle /tmp/gradle-*.zip
 
