@@ -49,6 +49,23 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             vagrant \
             zip
 
+# apk stuff
+ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
+ENV PATH ${GRADLE_HOME}/bin:${PATH}
+
+RUN apt-get install -y \
+    libc6-dev-i386 \
+    lib32z1 \
+    default-jdk
+
+RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
+    unzip -d /opt/gradle /tmp/gradle-*.zip
+
+COPY android-sdk.sh /tmp/android-sdk.sh
+
+RUN chmod +x /tmp/android-sdk.sh
+
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \

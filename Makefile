@@ -4,7 +4,7 @@
 
 build:
 	docker build \
-	-t prominentedgestatengine/jenkins:gdal-latest .
+	-t prominentedgestatengine/jenkins:firecares-latest .
 
 push:
-	docker push prominentedgestatengine/jenkins:gdal-latest
+	docker push prominentedgestatengine/jenkins:firecares-latest
