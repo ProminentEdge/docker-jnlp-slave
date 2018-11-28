@@ -58,7 +58,8 @@ RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp
 
 COPY android-sdk.sh /tmp/android-sdk.sh
 
-RUN chmod +x /tmp/android-sdk.sh
+RUN chmod +x /tmp/android-sdk.sh && \
+    /tmp/android-sdk.sh
 
 
 RUN apt-get update && \
