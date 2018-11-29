@@ -17,13 +17,18 @@ tar xf android-sdk*-linux.tgz
 wget https://dl.google.com/android/repository/android-ndk-r12b-linux-x86_64.zip
 uznip android-ndk*.zip
 
+apt-get install -y android-sdk \
+                   android-sdk-platform-23 \
+                   libgradle-android-plugin-java \
+                   maven
+
 # Let it update itself and install some stuff
-cd android-sdk-linux/tools
-./android update sdk --no-ui
+#cd android-sdk-linux/tools
+#./android update sdk --no-ui
 
 # Download every build-tools version that has ever existed
 # This will save you time! Thank me later for this
-./android update sdk --all --no-ui --filter $(seq -s, 27)
+#./android update sdk --all --no-ui --filter $(seq -s, 27)
 
 # If you need additional packages for your app, check available packages with:
 # ./android list sdk --all
@@ -54,3 +59,9 @@ swapon /swapfile
 mkdir ~/.gradle
 echo 'org.gradle.daemon=true' >> ~/.gradle/gradle.properties
 # See here: https://www.timroes.de/2013/09/12/speed-up-gradle/
+
+yes | /tmp/tools/bin/sdkmanager --licenses
+
+/tmp/tools/bin/sdkmanager "platforms;android-27"
+/tmp/tools/bin/sdkmanager "build-tools;27.0.3"
+

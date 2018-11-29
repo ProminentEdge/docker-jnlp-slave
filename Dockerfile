@@ -95,8 +95,10 @@ RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp
 
 COPY android-sdk.sh /tmp/android-sdk.sh
 
-RUN chmod +x /tmp/android-sdk.sh && \
-    /tmp/android-sdk.sh
+RUN chmod +x /tmp/android-sdk.sh
+
+RUN /tmp/android-sdk.sh
+
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
