@@ -89,6 +89,9 @@ RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.z
     mv vault /usr/local/bin && \
     chmod 755 /usr/local/bin/vault
 
+# yarn stuff
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+
 # apk stuff
 ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
 ENV PATH ${GRADLE_HOME}/bin:${PATH}
@@ -97,9 +100,6 @@ RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp
     unzip -d /opt/gradle /tmp/gradle-*.zip
 
 COPY android-sdk.sh /tmp/android-sdk.sh
-
-# yarn stuff
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
 RUN chmod +x /tmp/android-sdk.sh && \
     /tmp/android-sdk.sh
