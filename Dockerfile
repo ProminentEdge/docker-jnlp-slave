@@ -39,10 +39,9 @@ ENV BUILD_PACKAGES apt-transport-https \
 ENV RUNTIME_PACKAGES apt-transport-https \
             awscli \
             docker-ce=17.03.1~ce-0~ubuntu-xenial \
-            elixir \
-            esl-erlang \
             libproj-dev \
             libc6 \
+            nodejs \
             postgresql \
             postgresql-contrib \
             rsync \
@@ -53,11 +52,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" && \
-    wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
-    dpkg -i erlang-solutions_1.0_all.deb && \
-    wget http://download.osgeo.org/gdal/2.2.2/gdal-2.2.2.tar.gz && \
-    tar -xvf gdal-2.2.2.tar.gz && \
-    cd gdal-2.2.2 && \
     ./configure --with-curl=/usr/bin/curl-config && \
     make && \
     make install && \
