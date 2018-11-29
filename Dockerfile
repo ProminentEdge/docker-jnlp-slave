@@ -44,8 +44,7 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             nodejs \
             postgresql \
             postgresql-contrib \
-            rsync \
-            vagrant \
+            unzip \
             zip
 
 RUN apt-get update && \
@@ -97,7 +96,13 @@ COPY android-sdk.sh /tmp/android-sdk.sh
 
 RUN chmod +x /tmp/android-sdk.sh
 
-RUN /tmp/android-sdk.sh
+COPY android-studio-ide-181.5056338-linux.zip /tmp/
+
+RUN cd /tmp && \
+    unzip android-studio-ide-181.5056338-linux.zip
+
+RUN cd /tmp && \
+    ./android-sdk.sh
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
