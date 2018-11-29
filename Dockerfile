@@ -98,6 +98,9 @@ RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp
 
 COPY android-sdk.sh /tmp/android-sdk.sh
 
+# yarn stuff
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+
 RUN chmod +x /tmp/android-sdk.sh && \
     /tmp/android-sdk.sh
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
