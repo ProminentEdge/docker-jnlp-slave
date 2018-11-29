@@ -49,19 +49,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             vagrant \
             zip
 
-# apk stuff
-ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
-ENV PATH ${GRADLE_HOME}/bin:${PATH}
-
-RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
-    unzip -d /opt/gradle /tmp/gradle-*.zip
-
-COPY android-sdk.sh /tmp/android-sdk.sh
-
-RUN chmod +x /tmp/android-sdk.sh && \
-    /tmp/android-sdk.sh
-
-
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
@@ -102,6 +89,17 @@ RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.z
     mv vault /usr/local/bin && \
     chmod 755 /usr/local/bin/vault
 
+# apk stuff
+ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
+ENV PATH ${GRADLE_HOME}/bin:${PATH}
+
+RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
+    unzip -d /opt/gradle /tmp/gradle-*.zip
+
+COPY android-sdk.sh /tmp/android-sdk.sh
+
+RUN chmod +x /tmp/android-sdk.sh && \
+    /tmp/android-sdk.sh
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
