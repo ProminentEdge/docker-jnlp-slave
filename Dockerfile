@@ -52,9 +52,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" && \
-    ./configure --with-curl=/usr/bin/curl-config && \
-    make && \
-    make install && \
     apt-get update && \
     apt-get install -y $RUNTIME_PACKAGES
 
