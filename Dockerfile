@@ -96,7 +96,9 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
 
 # apk stuff
 ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
-ENV PATH ${GRADLE_HOME}/bin:${PATH}
+ENV ANDROID_HOME /tmp/android-sdk-linux/
+ENV PATH ${GRADLE_HOME}/bin:${PATH}:${ANDROID_HOME}platform-tools/:$ANDROID_HOME/../tools/bin/
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64/
 
 RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
     unzip -d /opt/gradle /tmp/gradle-*.zip
