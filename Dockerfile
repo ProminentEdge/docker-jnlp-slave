@@ -96,10 +96,10 @@ COPY android-sdk.sh /tmp/android-sdk.sh
 
 RUN chmod +x /tmp/android-sdk.sh
 
-COPY android-studio-ide-181.5056338-linux.zip /tmp/
+COPY sdk-tools-linux-4333796.zip /tmp/
 
 RUN cd /tmp && \
-    unzip android-studio-ide-181.5056338-linux.zip
+    unzip sdk-tools-linux-4333796.zip
 
 RUN cd /tmp && \
     ./android-sdk.sh
