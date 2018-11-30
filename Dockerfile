@@ -45,6 +45,9 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             postgresql \
             postgresql-contrib \
             unzip \
+            ruby \
+            ruby-dev \
+            rubygems-integration \
             zip
 
 RUN apt-get update && \
@@ -72,6 +75,9 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
+
+# Install the fastlane:
+RUN gem install fastlane -NV
 
 # NodeJS 8.x
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
