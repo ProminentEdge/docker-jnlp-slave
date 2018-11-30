@@ -89,7 +89,10 @@ RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.z
     chmod 755 /usr/local/bin/vault
 
 # yarn stuff
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
+    apt update && \
+    apt install -y  yarn
 
 # apk stuff
 ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
