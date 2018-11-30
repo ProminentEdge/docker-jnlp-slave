@@ -105,9 +105,9 @@ COPY android-sdk.sh /tmp/android-sdk.sh
 
 RUN chmod +x /tmp/android-sdk.sh
 
-COPY sdk-tools-linux-4333796.zip /tmp/
+COPY sdk-tools-linux-4333796.zip /tmp/android-sdk-linux/
 
-RUN cd /tmp && \
+RUN cd /tmp/android-sdk-linux/ && \
     unzip sdk-tools-linux-4333796.zip
 
 RUN cd /tmp && \
