@@ -47,19 +47,13 @@ dpkg --add-architecture i386
 apt-get update
 apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
 
-# Add some swap space, useful if you've got less than 2G of RAM
-fallocate -l 2G /swapfile 
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-
 # Optionally run build system as daemon (speeds up build process)
 mkdir ~/.gradle
 echo 'org.gradle.daemon=true' >> ~/.gradle/gradle.properties
 # See here: https://www.timroes.de/2013/09/12/speed-up-gradle/
 
-yes | /tmp/tools/bin/sdkmanager --licenses
+yes | /tmp/android-sdk-linux/tools/bin/sdkmanager --licenses
 
-/tmp/tools/bin/sdkmanager "platforms;android-27"
-/tmp/tools/bin/sdkmanager "build-tools;27.0.3"
+/tmp/android-sdk-linux/tools/bin/sdkmanager "platforms;android-27"
+/tmp/android-sdk-linux/tools/bin/sdkmanager "build-tools;27.0.3"
 
