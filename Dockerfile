@@ -41,7 +41,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             docker-ce=17.03.1~ce-0~ubuntu-xenial \
             libproj-dev \
             libc6 \
-            nodejs \
             postgresql \
             postgresql-contrib \
             unzip \
@@ -80,7 +79,8 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
 RUN gem install fastlane -NV
 
 # NodeJS 8.x
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt install nodejs
 
 # Install Vault
 RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.zip && \
