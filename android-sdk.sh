@@ -7,7 +7,7 @@
 add-apt-repository ppa:webupd8team/java
 apt-get update
 apt-get install -y oracle-java8-installer
-apt-get install -y unzip make # NDK stuff
+apt-get install -y make # NDK stuff
 
 # Get SDK tools (link from https://developer.android.com/studio/index.html#downloads)
 wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
