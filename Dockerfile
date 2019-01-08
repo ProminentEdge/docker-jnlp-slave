@@ -85,6 +85,9 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
 # Bower stuff
 RUN npm install -g bower
 
+# Gulp stuff
+RUN npm install --global gulp-cli
+
 # Install Vault
 RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.zip && \
     unzip vault_0.9.6_linux_amd64.zip && \
