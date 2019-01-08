@@ -82,6 +82,9 @@ RUN gem install fastlane -NV
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt install nodejs
 
+# Bower stuff
+RUN npm install -g bower
+
 # Install Vault
 RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.zip && \
     unzip vault_0.9.6_linux_amd64.zip && \
