@@ -32,6 +32,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             ca-certificates \
             curl \
             lsb-release \
+            python-pip \
             software-properties-common
 
 ENV RUNTIME_PACKAGES apt-transport-https \
@@ -90,7 +91,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
         elasticsearch-curator==5.4.0 \
-        boto==2.48.0
+        boto==2.48.0 \
+        anchorecli
 
 # Install Vault
 RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.zip && \
