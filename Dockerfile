@@ -43,6 +43,8 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             libc6 \
             postgresql \
             postgresql-contrib \
+            python-dev \
+            python3-dev \
             unzip \
             ruby \
             ruby-dev \
