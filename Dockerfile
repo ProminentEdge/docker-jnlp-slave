@@ -45,6 +45,13 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             postgresql-contrib \
             python-dev \
             python3-dev \
+            python3 \
+            build-essential \
+            libssl-dev \
+            libffi-dev \
+            libxml2-dev \
+            libxslt1-dev \
+            zlib1g-dev \
             unzip \
             ruby \
             ruby-dev \
