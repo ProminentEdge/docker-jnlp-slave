@@ -36,7 +36,14 @@ ENV BUILD_PACKAGES apt-transport-https \
             libpng \
             lsb-release \
             pkgconf \
-            software-properties-common
+            software-properties-common \
+            libreadline-gplv2-dev \
+            libncursesw5-dev \
+            libsqlite3-dev \
+            tk-dev \
+            libgdbm-dev \
+            libc6-dev \
+            libbz2-dev
 
 ENV RUNTIME_PACKAGES apt-transport-https \
             awscli \
@@ -51,9 +58,8 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             libxslt1-dev \
             postgresql \
             postgresql-contrib \
-            python-dev \
-            python3-dev \
-            python3 \
+            python2.7-dev \
+            python2.7 \
             ruby \
             ruby-dev \
             rubygems-integration \
@@ -64,8 +70,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" && \
-    apt-get update && \
     apt-get install -y $RUNTIME_PACKAGES
 
 RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-linux-amd64.tar.gz && \
