@@ -59,7 +59,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             postgresql \
             postgresql-contrib \
             python2.7-dev \
-            python2.7 \
             ruby \
             ruby-dev \
             rubygems-integration \
