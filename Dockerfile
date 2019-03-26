@@ -39,6 +39,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             libsasl2-dev \
             libpng-dev \
             libmemcached-dev \
+            zlib1g-dev \
             lsb-release \
             autoconf \
             libtool \
