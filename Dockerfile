@@ -38,26 +38,26 @@ ENV BUILD_PACKAGES apt-transport-https \
 
 ENV RUNTIME_PACKAGES apt-transport-https \
             awscli \
+            build-essential \
             docker-ce=17.03.1~ce-0~ubuntu-xenial \
             file \
-            libproj-dev \
             libc6 \
+            libffi-dev \
+            libproj-dev \
+            libssl-dev \
+            libxml2-dev \
+            libxslt1-dev \
             postgresql \
             postgresql-contrib \
             python-dev \
             python3-dev \
             python3 \
-            build-essential \
-            libssl-dev \
-            libffi-dev \
-            libxml2-dev \
-            libxslt1-dev \
-            zlib1g-dev \
-            unzip \
             ruby \
             ruby-dev \
             rubygems-integration \
-            zip
+            unzip \
+            zip \
+            zlib1g-dev
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
