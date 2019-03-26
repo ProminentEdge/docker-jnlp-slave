@@ -36,8 +36,28 @@ ENV BUILD_PACKAGES apt-transport-https \
             libc6-dev \
             libgdbm-dev \
             libproj-dev \
+            libsasl2-dev \
             libpng-dev \
             lsb-release \
+            autoconf \
+            libtool \
+            python-opengl \
+            python-imaging \
+            python-pyrex \
+            python-pyside.qtopengl \
+            idle-python2.7 \
+            qt4-dev-tools \
+            qt4-designer \
+            libqtgui4 \
+            libqtcore4 \
+            libqt4-xml \
+            libqt4-test \
+            libqt4-script \
+            libqt4-network \
+            libqt4-dbus \
+            python-qt4 \
+            python-qt4-gl \
+            libgle3 \
             pkgconf \
             software-properties-common \
             libreadline-gplv2-dev \
@@ -52,7 +72,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             file \
             libc6 \
             libffi-dev \
-            libproj-dev \
             libssl-dev \
             libxml2-dev \
             libxslt1-dev \
