@@ -34,6 +34,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             libcurl4-gnutls-dev \
             libproj-dev \
             lsb-release \
+            pkgconf \
             software-properties-common
 
 ENV RUNTIME_PACKAGES apt-transport-https \
