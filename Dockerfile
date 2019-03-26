@@ -33,7 +33,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             curl \
             libcurl4-gnutls-dev \
             libproj-dev \
-            libpng \
+            libpng-dev \
             lsb-release \
             pkgconf \
             software-properties-common \
@@ -48,7 +48,7 @@ ENV BUILD_PACKAGES apt-transport-https \
 ENV RUNTIME_PACKAGES apt-transport-https \
             awscli \
             build-essential \
-            docker-ce=17.03.1~ce-0~ubuntu-xenial \
+            docker-ce=17.03.1~ce-0~debian-stretch \
             file \
             libc6 \
             libffi-dev \
@@ -68,7 +68,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     apt-get install -y $RUNTIME_PACKAGES
 
 RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-linux-amd64.tar.gz && \
