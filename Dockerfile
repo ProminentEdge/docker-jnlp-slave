@@ -58,6 +58,7 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             libxslt1-dev \
             postgresql \
             postgresql-contrib \
+            python-dev \
             python2.7-dev \
             ruby \
             ruby-dev \
