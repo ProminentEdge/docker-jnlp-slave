@@ -33,6 +33,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             curl \
             libcurl4-gnutls-dev \
             libproj-dev \
+            libpng \
             lsb-release \
             pkgconf \
             software-properties-common
