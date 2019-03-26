@@ -31,7 +31,10 @@ ENV BUILD_PACKAGES apt-transport-https \
             build-essential \
             ca-certificates \
             curl \
+            libbz2-dev \
             libcurl4-gnutls-dev \
+            libc6-dev \
+            libgdbm-dev \
             libproj-dev \
             libpng-dev \
             lsb-release \
@@ -40,10 +43,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             libreadline-gplv2-dev \
             libncursesw5-dev \
             libsqlite3-dev \
-            tk-dev \
-            libgdbm-dev \
-            libc6-dev \
-            libbz2-dev
+            tk-dev
 
 ENV RUNTIME_PACKAGES apt-transport-https \
             awscli \
