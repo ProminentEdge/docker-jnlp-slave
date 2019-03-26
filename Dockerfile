@@ -134,7 +134,6 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
         elasticsearch-curator==5.4.0 \
-        boto==2.48.0 \
-        flake8
+        boto==2.48.0
 
 ENTRYPOINT ["jenkins-slave"]
