@@ -44,6 +44,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             python-opengl \
             python-imaging \
             python-pyrex \
+            python-flake8 \
             python-pyside.qtopengl \
             idle-python2.7 \
             qt4-dev-tools \
