@@ -180,6 +180,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         pyopenssl \
         urllib3 \
         ndg-httpsclient \
-        pyasn1
+        pyasn1 \
+        sh
 
 ENTRYPOINT ["jenkins-slave"]
