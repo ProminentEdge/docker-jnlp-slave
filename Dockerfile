@@ -181,6 +181,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         urllib3 \
         ndg-httpsclient \
         pyasn1 \
-        sh
+        sh \
+        tabulate
 
 ENTRYPOINT ["jenkins-slave"]
