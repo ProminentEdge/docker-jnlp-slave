@@ -184,6 +184,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         sh \
         tabulate \
         troposphere \
-        pytz
+        pytz \
+        dateutil
 
 ENTRYPOINT ["jenkins-slave"]
