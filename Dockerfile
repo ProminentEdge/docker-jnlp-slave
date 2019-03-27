@@ -182,6 +182,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         ndg-httpsclient \
         pyasn1 \
         sh \
-        tabulate
+        tabulate \
+        troposphere
 
 ENTRYPOINT ["jenkins-slave"]
