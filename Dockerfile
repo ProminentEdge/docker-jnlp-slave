@@ -175,6 +175,7 @@ RUN cd /tmp && \
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install \
+        ansible=2.4 \
         elasticsearch-curator==5.4.0 \
         boto==2.48.0 \
         pyopenssl \
