@@ -67,6 +67,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             libncursesw5-dev \
             libsqlite3-dev \
             libgit2-dev \
+            libssh2-1-dev \
             tk-dev \
             jq
 
