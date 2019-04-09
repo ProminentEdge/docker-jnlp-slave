@@ -69,7 +69,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             libgit2-dev \
             libssh2-1-dev \
             libgit2-dev \
-            libgit2 \
+            libgit2-24 \
             tk-dev \
             jq
 
