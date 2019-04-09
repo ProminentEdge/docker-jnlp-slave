@@ -66,7 +66,6 @@ ENV BUILD_PACKAGES apt-transport-https \
             libreadline-gplv2-dev \
             libncursesw5-dev \
             libsqlite3-dev \
-            libgit2-dev \
             libssh2-1-dev \
             libgit2-dev \
             libgit2-24 \
