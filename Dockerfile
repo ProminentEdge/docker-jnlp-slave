@@ -68,6 +68,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             libsqlite3-dev \
             libgit2-dev \
             libssh2-1-dev \
+            libgit2-dev \
             tk-dev \
             jq
 
