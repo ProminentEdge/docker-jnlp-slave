@@ -70,7 +70,7 @@ RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /e
 
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 && \
     mv confd-0.14.0-linux-amd64 /usr/local/bin/confd && \
-    wget -O packer.zip https://releases.hashicorp.com/packer/1.1.2/packer_1.1.2_linux_amd64.zip?_ga=2.243599746.608711644.1512069049-1880364814.1510687238 && \
+    wget -O packer.zip https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip?_ga=2.243599746.608711644.1512069049-1880364814.1510687238 && \
     unzip packer.zip && \
     mv packer /usr/local/bin/packer && \
     chmod 755 /usr/local/bin/confd && \
