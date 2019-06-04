@@ -50,7 +50,10 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             software-properties-common \
             vagrant \
             zip \
-            ruby-dev
+            ruby-dev \
+            zlib1g \
+            zlib1g-dev
+
 RUN echo "151.101.32.162 registry.npmjs.org" >> /etc/hosts
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
