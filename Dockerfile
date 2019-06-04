@@ -115,8 +115,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
 
 # apk stuff
 ENV GRADLE_HOME /opt/gradle/gradle-4.10.2
-ENV ANDROID_HOME /tmp/android-sdk-linux/
-ENV PATH ${GRADLE_HOME}/bin:${PATH}:${ANDROID_HOME}platform-tools/:$ANDROID_HOME/../tools/bin/
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64/
 
 RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
@@ -130,18 +128,6 @@ RUN wget http://download.joedog.org/siege/siege-latest.tar.gz && \
     make && \
     make install && \
     siege.config
-
-COPY android-sdk.sh /tmp/android-sdk.sh
-
-RUN chmod +x /tmp/android-sdk.sh
-
-COPY sdk-tools-linux-4333796.zip /tmp/android-sdk-linux/
-
-RUN cd /tmp/android-sdk-linux/ && \
-    unzip sdk-tools-linux-4333796.zip
-
-RUN cd /tmp && \
-    ./android-sdk.sh
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
