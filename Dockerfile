@@ -123,6 +123,11 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64/
 RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
     unzip -d /opt/gradle /tmp/gradle-*.zip
 
+# Increase sockets for siege
+RUN sysctl net.ipv4.ip_local_port_range="15000 61000" && \
+    sysctl net.ipv4.tcp_fin_timeout=30
+
+
 # Siege installation:
 RUN wget http://download.joedog.org/siege/siege-latest.tar.gz && \
     tar -zxvf siege-latest.tar.gz && \
