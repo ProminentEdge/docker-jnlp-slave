@@ -52,7 +52,8 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             zip \
             ruby-dev \
             zlib1g \
-            zlib1g-dev
+            zlib1g-dev \
+            apache2-utils
 
 RUN echo "151.101.32.162 registry.npmjs.org" >> /etc/hosts
 
