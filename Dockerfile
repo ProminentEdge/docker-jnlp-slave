@@ -78,8 +78,8 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
     unzip packer.zip && \
     mv packer /usr/local/bin/packer && \
     chmod 755 /usr/local/bin/confd && \
-    wget https://storage.googleapis.com/kubernetes-helm/helm-v2.9.1-linux-amd64.tar.gz && \
-    tar -xvzf helm-v2.9.1-linux-amd64.tar.gz && \
+    wget https://storage.googleapis.com/kubernetes-helm/helm-v2.14.3-linux-amd64.tar.gz && \
+    tar -xvzf helm-v2.14.3-linux-amd64.tar.gz && \
     chmod +x  linux-amd64/helm && \
     mv linux-amd64/helm /usr/local/bin/helm && \
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
