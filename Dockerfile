@@ -149,9 +149,10 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         pytz \
         python-dateutil
 
-# Install golang 1.13.6
-RUN wget https://dl.google.com/go/go1.13.6.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go1.13.6.linux-amd64.tar.gz
+# Install golang 1.10
+RUN wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz && \
+    rm -rf go1.10.linux-amd64.tar.gz
 
 ENV PATH="${PATH}:/usr/local/go/bin"
 
