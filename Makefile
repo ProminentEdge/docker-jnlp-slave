@@ -4,6 +4,8 @@
 
 build:
 	docker build \
+	--no-cache \
+	--network=host \
 	-t prominentedgestatengine/jenkins:gdal-latest .
 
 push:
