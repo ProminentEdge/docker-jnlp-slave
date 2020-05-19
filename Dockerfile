@@ -45,7 +45,6 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             libc6 \
             postgresql \
             postgresql-contrib \
-            libpq-dev \
             rsync \
             vagrant \
             zip
