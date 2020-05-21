@@ -58,7 +58,7 @@ RUN apt-get update && \
     wget http://download.osgeo.org/gdal/2.2.2/gdal-2.2.2.tar.gz && \
     tar -xvf gdal-2.2.2.tar.gz && \
     cd gdal-2.2.2 && \
-    ./configure --with-curl=/usr/bin/curl-config --with-pg && \
+    ./configure --with-curl=/usr/bin/curl-config --with-pg=/usr/bin/pg_config && \
     make && \
     make install && \
     apt-get update && \
