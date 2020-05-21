@@ -33,7 +33,7 @@ ENV BUILD_PACKAGES apt-transport-https \
             curl \
             libcurl4-gnutls-dev \
             libproj-dev \
-            libpq \
+            libpq-dev \
             lsb-release \
             software-properties-common
 
