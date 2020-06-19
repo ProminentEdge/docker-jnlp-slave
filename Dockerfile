@@ -70,7 +70,7 @@ RUN wget -O packer.zip https://releases.hashicorp.com/packer/1.1.2/packer_1.1.2_
     wget https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz && \
     tar -xvzf helm-v3.2.4-linux-amd64.tar.gz && \
     chmod +x  linux-amd64/helm && \
-    mv chmod +x  linux-amd64/helm /usr/local/bin/helm  && \
+    mv linux-amd64/helm /usr/local/bin/helm  && \
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
