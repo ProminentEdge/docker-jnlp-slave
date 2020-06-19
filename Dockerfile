@@ -73,7 +73,7 @@ RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-linux
 RUN wget -O packer.zip https://releases.hashicorp.com/packer/1.1.2/packer_1.1.2_linux_amd64.zip?_ga=2.243599746.608711644.1512069049-1880364814.1510687238 && \
     unzip packer.zip && \
     mv packer /usr/local/bin/packer && \
-    wget https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz && \a
+    wget https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz && \
     tar -xvzf helm-v3.2.4-linux-amd64.tar.gz && \
     chmod +x  linux-amd64/helm && \
     mv chmod +x  linux-amd64/helm /usr/local/bin/helm  && \
