@@ -70,16 +70,13 @@ RUN wget https://github.com/heptio/ark/releases/download/v0.7.0/ark-v0.7.0-linux
     chmod +x ark && \
     mv ark /usr/local/bin/ark
 
-RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 && \
-    mv confd-0.14.0-linux-amd64 /usr/local/bin/confd && \
-    wget -O packer.zip https://releases.hashicorp.com/packer/1.1.2/packer_1.1.2_linux_amd64.zip?_ga=2.243599746.608711644.1512069049-1880364814.1510687238 && \
+RUN wget -O packer.zip https://releases.hashicorp.com/packer/1.1.2/packer_1.1.2_linux_amd64.zip?_ga=2.243599746.608711644.1512069049-1880364814.1510687238 && \
     unzip packer.zip && \
     mv packer /usr/local/bin/packer && \
-    chmod 755 /usr/local/bin/confd && \
-    wget https://storage.googleapis.com/kubernetes-helm/helm-v2.7.2-linux-amd64.tar.gz && \
-    tar -xvzf helm-v2.7.2-linux-amd64.tar.gz && \
+    wget https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz && \a
+    tar -xvzf helm-v3.2.4-linux-amd64.tar.gz && \
     chmod +x  linux-amd64/helm && \
-    mv linux-amd64/helm /usr/local/bin/helm && \
+    mv chmod +x  linux-amd64/helm /usr/local/bin/helm  && \
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl

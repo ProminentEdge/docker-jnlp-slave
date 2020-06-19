@@ -6,7 +6,7 @@ build:
 	docker build \
 	--no-cache \
 	--network=host \
-	-t prominentedgestatengine/jenkins:gdal-latest .
+	-t prominentedgestatengine/jenkins:nfors-latest .
 
 push:
-	docker push prominentedgestatengine/jenkins:gdal-latest
+	docker push prominentedgestatengine/jenkins:nfors-latest
