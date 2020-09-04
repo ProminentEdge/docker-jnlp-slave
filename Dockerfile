@@ -139,6 +139,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         ansible==2.4 \
         elasticsearch-curator==5.4.0 \
         boto==2.48.0 \
+        cryptography~=2.0.3 \
         pyopenssl \
         urllib3 \
         ndg-httpsclient \
@@ -147,7 +148,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         tabulate \
         troposphere \
         pytz \
-        python-dateutil
+        python-dateutil && \
+    pip install awscli --upgrade --user
 
 # Install golang 1.10
 RUN wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz && \
