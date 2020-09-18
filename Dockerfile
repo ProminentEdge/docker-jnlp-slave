@@ -106,6 +106,10 @@ RUN curl -O https://releases.hashicorp.com/vault/0.9.6/vault_0.9.6_linux_amd64.z
 # Install Ruby bundler
 RUN gem install bundler
 
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    sudo ./aws/install
+
 # Clean up
 #RUN apt-get remove -y --purge $BUILD_PACKAGES $RUNTIME_PACKAGES && \
 #    rm -rf /var/lib/apt/lists/*
@@ -147,7 +151,8 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
 
 RUN sudo apt-get remove awscli && \
     sudo pip install -U awscli && \
-    cp /usr/local/bin/aws /usr/bin/aws
+    cp /usr/local/bin/aws /usr/bin/aws && \
+    sudo apt-get install -y groff
 
 # Install golang 1.10
 RUN wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz && \
