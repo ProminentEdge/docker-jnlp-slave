@@ -36,7 +36,6 @@ ENV BUILD_PACKAGES apt-transport-https \
             software-properties-common
 
 ENV RUNTIME_PACKAGES apt-transport-https \
-            awscli \
             build-essential \
             docker-ce=17.06.2~ce-0~ubuntu \
             elixir \
@@ -124,14 +123,10 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64/
 RUN wget https://services.gradle.org/distributions/gradle-4.10.2-bin.zip -P /tmp && \
     unzip -d /opt/gradle /tmp/gradle-*.zip
 
-# Siege installation:
-RUN wget http://download.joedog.org/siege/siege-latest.tar.gz && \
-    tar -zxvf siege-latest.tar.gz && \
-    cd siege-*/ && \
-    ./configure && \
-    make && \
-    make install && \
-    siege.config
+# Terraform
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg |  apt-key add - && \
+     apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
+     apt-get update &&  apt-get install terraform
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
@@ -148,8 +143,11 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && \
         tabulate \
         troposphere \
         pytz \
-        python-dateutil && \
-    pip install awscli --upgrade --user
+        python-dateutil
+
+RUN sudo apt-get remove awscli && \
+    sudo pip install -U awscli && \
+    cp /usr/local/bin/aws /usr/bin/aws
 
 # Install golang 1.10
 RUN wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz && \

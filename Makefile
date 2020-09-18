@@ -1,10 +1,22 @@
-# Jenkins Master
+# Jenkins JNLP Slave
 
 
+ORG ?= 508654928277.dkr.ecr.us-east-1.amazonaws.com
+REPO ?= dds-jnlp
+ENVIRONMENT ?= development
+
+login:
+	$$(aws ecr get-login --no-include-email --region us-east-1)
 
 build:
 	docker build --no-cache \
-	-t prominentedgestatengine/jenkins:jnlp-slave .
+        --no-cache \
+        --network=host \
+	-t $(ORG)/$(REPO):dds-jnlp .
+
+	echo "TAG=${TAG}" > tag.properties
 
 push:
-	docker push prominentedgestatengine/jenkins:jnlp-slave
+	docker push $(ORG)/$(REPO):dds-jnlp
+
+
