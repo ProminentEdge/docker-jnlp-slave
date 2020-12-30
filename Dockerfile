@@ -20,7 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-FROM jenkinsci/slave:3.27-1
+FROM jenkinsci/slave:4.3-1
 LABEL maintainer=devops@prominentedge.com
 
 USER root
@@ -38,7 +38,7 @@ ENV BUILD_PACKAGES apt-transport-https \
 ENV RUNTIME_PACKAGES apt-transport-https \
             awscli \
             build-essential \
-            docker-ce=17.06.2~ce-0~ubuntu \
+            docker-ce \
             elixir \
             esl-erlang \
             g++ \
