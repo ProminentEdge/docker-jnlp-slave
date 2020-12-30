@@ -59,9 +59,15 @@ RUN echo "151.101.32.162 registry.npmjs.org" >> /etc/hosts
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_PACKAGES && \
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" && \
-    wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
+    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
+    add-apt-repository \
+       "deb [arch=amd64] https://download.docker.com/linux/debian \
+       $(lsb_release -cs) \
+       stable" && \
+    apt-get update && \
+    apt-get install -y docker-ce docker-ce-cli containerd.io
+
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
     dpkg -i erlang-solutions_1.0_all.deb && \
     apt-get update && \
     apt-get install -y $RUNTIME_PACKAGES
@@ -111,8 +117,8 @@ RUN gem install bundler
 #    rm -rf /var/lib/apt/lists/*
 
 # yarn stuff
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt update && \
     apt install -y  yarn
 
