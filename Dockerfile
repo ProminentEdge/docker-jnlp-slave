@@ -50,7 +50,7 @@ ENV RUNTIME_PACKAGES apt-transport-https \
             software-properties-common \
             vagrant \
             zip \
-            ruby-dev \
+            ruby-full \
             zlib1g \
             zlib1g-dev \
             apache2-utils
