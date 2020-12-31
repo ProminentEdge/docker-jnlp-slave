@@ -73,7 +73,6 @@ RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
 RUN wget -O packer.zip https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip?_ga=2.243599746.608711644.1512069049-1880364814.1510687238 && \
     unzip packer.zip && \
     mv packer /usr/local/bin/packer && \
-    chmod 755 /usr/local/bin/confd && \
     wget https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz && \
     tar -xvzf helm-v3.2.4-linux-amd64.tar.gz && \
     chmod +x  linux-amd64/helm && \
